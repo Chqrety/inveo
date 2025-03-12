@@ -3,7 +3,7 @@ import Image from "next/image"
 
 const berkshire = Berkshire_Swash({ subsets: ["latin"], weight: "400" })
 
-export default function LockScreen() {
+export default function LockScreen({ onUnlock }: { onUnlock: () => void }) {
   return (
     <div className="relative pt-24 xl:pt-64 h-dvh">
       {/* <div className="absolute w-10 h-10 bg-black sm:bg-red-500 top-1/2 left-32 md:bg-orange-500 lg:bg-amber-500 xl:bg-lime-500" /> */}
@@ -73,7 +73,10 @@ export default function LockScreen() {
           <p className="text-sm italic font-bold">Jabatan Tamu</p>
         </div>
         <div className="flex justify-center mt-18">
-          <button className="z-20 bg-[#06205B] px-5 py-2 flex gap-2 rounded-3xl absolute bottom-16">
+          <button
+            onClick={onUnlock}
+            className="z-20 bg-[#06205B] px-5 py-2 flex gap-2 rounded-3xl absolute bottom-16 hover:cursor-pointer"
+          >
             <Image src="/assets/mail.svg" width={20} height={20} alt="mail" />
             BUKA UNDANGAN
           </button>
