@@ -6,11 +6,17 @@ import { AnimatePresence, motion } from "framer-motion"
 
 export default function Home() {
   const [isUnlocked, setIsUnlocked] = useState(false)
-  const [audio] = useState(() => new Audio("/assets/backsound-ramadhan.mp3"))
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
 
   useEffect(() => {
-    if (isUnlocked) {
+    if (typeof window !== "undefined") {
+      setAudio(new Audio("/assets/backsound-ramadhan.mp3"))
+    }
+  }, [])
+
+  useEffect(() => {
+    if (isUnlocked && audio) {
       audio.play()
       audio.loop = true
       setIsPlaying(true)
@@ -18,12 +24,14 @@ export default function Home() {
   }, [isUnlocked, audio])
 
   const togglePlayPause = () => {
-    if (isPlaying) {
-      audio.pause()
-    } else {
-      audio.play()
+    if (audio) {
+      if (isPlaying) {
+        audio.pause()
+      } else {
+        audio.play()
+      }
+      setIsPlaying(!isPlaying)
     }
-    setIsPlaying(!isPlaying)
   }
 
   return (
