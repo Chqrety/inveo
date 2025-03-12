@@ -64,7 +64,7 @@ export default function LockScreen() {
             </div>
           </div>
         </div>
-        <div className="z-10 flex justify-center">
+        <div className="absolute z-10 flex justify-center -translate-x-1/2 bottom-52 left-1/2">
           <Image src="/assets/quran.png" width={200} height={200} alt="quran" />
         </div>
         <div className="absolute bottom-32 left-1/2 text-center -translate-x-1/2 z-20 text-[#06205B]">
@@ -73,7 +73,7 @@ export default function LockScreen() {
           <p className="text-sm italic font-bold">Jabatan Tamu</p>
         </div>
         <div className="flex justify-center mt-18">
-          <button className="z-20 bg-[#06205B] px-5 py-2 flex gap-2 rounded-3xl">
+          <button className="z-20 bg-[#06205B] px-5 py-2 flex gap-2 rounded-3xl absolute bottom-16">
             <Image src="/assets/mail.svg" width={20} height={20} alt="mail" />
             BUKA UNDANGAN
           </button>
