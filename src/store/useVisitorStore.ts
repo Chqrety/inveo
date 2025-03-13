@@ -1,0 +1,17 @@
+import { create } from 'zustand'
+
+interface Visitor {
+  name: string
+  position: string
+  presence: string
+}
+
+interface VisitorStore {
+  visitor: Visitor | null
+  setVisitor: (visitor: Visitor | null) => void
+}
+
+export const useVisitorStore = create<VisitorStore>((set) => ({
+  visitor: null,
+  setVisitor: (visitor) => set({ visitor }),
+}))

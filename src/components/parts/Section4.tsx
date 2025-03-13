@@ -1,15 +1,48 @@
-import { useParams } from "next/navigation"
+import { useVisitorStore } from "@/store/useVisitorStore"
+import { useEffect, useState } from "react"
+import { supabase } from "@/lib/supabase"
+import { motion } from "framer-motion"
 
 export default function Section4() {
-  const params = useParams()
-  const formattedName = params.name
-    ? decodeURIComponent(String(params.name)).replace(/-/g, " ")
-    : ""
+  const visitor = useVisitorStore((state) => state.visitor)
+  const [presence, setPresence] = useState("")
+
+  const handleSubmit = async () => {
+    if (!visitor?.name || !presence) return alert("Harap lengkapi form!")
+
+    const { error } = await supabase
+      .from("visitors")
+      .update({
+        presence,
+      })
+      .eq("name", visitor.name)
+
+    if (error) {
+      console.error("Gagal update data:", error.message)
+      console.log("Gagal update data!")
+    } else {
+      // alert("Data berhasil dikirim!")
+      console.log("Data berhasil dikirim!")
+    }
+  }
+
+  useEffect(() => {
+    console.log(visitor)
+    if (visitor?.presence) {
+      setPresence(visitor.presence)
+    }
+  }, [visitor])
 
   return (
     <div className="relative flex flex-col bg-[#EEF3FF] py-12 ">
       <div className="flex justify-center mb-10">
-        <div className="relative text-center flex flex-col items-center gap-8 w-[80%] px-5 pt-10 pb-5 shadow-[0_4px_30px_rgba(0,0,0,0.5)] bg-transparent rounded-3xl">
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative text-center flex flex-col items-center gap-8 w-[80%] px-5 pt-10 pb-5 shadow-[0_4px_30px_rgba(0,0,0,0.5)] bg-transparent rounded-3xl"
+        >
           <div className="flex flex-col gap-3">
             <p className="text-4xl font-bold text-[#27445D]">RSVP</p>
             <p className="text-xs text-[#27445D]">
@@ -24,7 +57,7 @@ export default function Section4() {
               </p>
               <input
                 type="text"
-                value={formattedName}
+                value={visitor?.name || ""}
                 placeholder="Tulis Nama Anda"
                 className="bg-[#497D74]/10 w-full text-sm text-black p-3 rounded-[2px]"
                 disabled
@@ -35,21 +68,27 @@ export default function Section4() {
                 Konfirmasi Kehadiran <span className="text-red-500">*</span>
               </p>
               <select
-                defaultValue="Konfirmasi Kehadiran"
+                value={presence}
+                onChange={(e) => setPresence(e.target.value)}
                 className="select text-black bg-[#497D74]/10"
               >
-                <option disabled={true}>Konfirmasi Kehadiran Anda</option>
+                <option value="" disabled={true}>
+                  Konfirmasi Kehadiran Anda
+                </option>
                 <option value="Hadir">Hadir nuzulul qur'an</option>
                 <option value="Tidak Hadir">Tidak Hadir</option>
               </select>
             </div>
           </div>
           <div className=" flex justify-center">
-            <button className="btn btn-secondary border-none rounded-3xl px-5 xl:hover:btn-secondary text-[#EFE9D5]">
+            <button
+              onClick={handleSubmit}
+              className="btn btn-secondary border-none rounded-3xl px-5 xl:hover:btn-secondary text-[#EFE9D5]"
+            >
               SUBMIT
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

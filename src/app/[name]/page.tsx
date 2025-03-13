@@ -4,6 +4,7 @@ import { useParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import { supabase } from "@/lib/supabase"
 import { LockScreen, Main } from "@/components"
+import { useVisitorStore } from "@/store/useVisitorStore"
 import { AnimatePresence, motion } from "framer-motion"
 
 interface Visitor {
@@ -13,7 +14,7 @@ interface Visitor {
 
 const Page = () => {
   const params = useParams() as { name: string }
-  const [visitor, setVisitor] = useState<Visitor | null>(null)
+  const { visitor, setVisitor } = useVisitorStore()
   const [loading, setLoading] = useState(true)
   const [isUnlocked, setIsUnlocked] = useState(false)
 
@@ -33,7 +34,7 @@ const Page = () => {
 
       const { data, error } = await supabase
         .from("visitors")
-        .select("name, position")
+        .select("name, position, presence")
         .eq("name", formattedName)
         .maybeSingle()
 
@@ -43,7 +44,7 @@ const Page = () => {
     }
 
     fetchVisitor()
-  }, [params.name])
+  }, [params.name, setVisitor])
 
   // if (loading) return <p>Loading...</p>
   // if (!visitor) return <p>Visitor not found.</p>
