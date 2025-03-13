@@ -1,7 +1,11 @@
-import { playball } from "@/app/fonts"
-import Image from "next/image"
+import { useParams } from "next/navigation"
 
 export default function Section4() {
+  const params = useParams()
+  const formattedName = params.name
+    ? decodeURIComponent(String(params.name)).replace(/-/g, " ")
+    : ""
+
   return (
     <div className="relative flex flex-col bg-[#EEF3FF] py-12 ">
       <div className="flex justify-center mb-10">
@@ -20,8 +24,10 @@ export default function Section4() {
               </p>
               <input
                 type="text"
+                value={formattedName}
                 placeholder="Tulis Nama Anda"
-                className="input bg-[#497D74]/10"
+                className="bg-[#497D74]/10 w-full text-sm text-black p-3 rounded-[2px]"
+                disabled
               />
             </div>
             <div className="flex flex-col items-start max-w-xs w-full text-black gap-1">
@@ -33,8 +39,8 @@ export default function Section4() {
                 className="select text-black bg-[#497D74]/10"
               >
                 <option disabled={true}>Konfirmasi Kehadiran Anda</option>
-                <option>Hadir nuzulul qur'an</option>
-                <option>Tidak Hadir</option>
+                <option value="Hadir">Hadir nuzulul qur'an</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
               </select>
             </div>
           </div>

@@ -3,7 +3,17 @@ import Image from "next/image"
 
 const berkshire = Berkshire_Swash({ subsets: ["latin"], weight: "400" })
 
-export default function LockScreen({ onUnlock }: { onUnlock: () => void }) {
+interface LockScreenProps {
+  onUnlock: () => void
+  visitorName?: string
+  visitorPosition?: string
+}
+
+export default function LockScreen({
+  onUnlock,
+  visitorName,
+  visitorPosition,
+}: LockScreenProps) {
   return (
     <div className="relative pt-24 xl:pt-64 h-dvh">
       {/* <div className="absolute w-10 h-10 bg-black sm:bg-red-500 top-1/2 left-32 md:bg-orange-500 lg:bg-amber-500 xl:bg-lime-500" /> */}
@@ -69,8 +79,10 @@ export default function LockScreen({ onUnlock }: { onUnlock: () => void }) {
         </div>
         <div className="absolute bottom-32 left-1/2 text-center -translate-x-1/2 z-20 text-[#06205B]">
           <p className="text-xs font-semibold">Kepada Yth:</p>
-          <p className="font-bold text">Nama Tamu</p>
-          <p className="text-sm italic font-bold">Jabatan Tamu</p>
+          <p className="font-bold text">{visitorName || "Guest"}</p>
+          <p className="text-sm italic font-bold">
+            {visitorPosition || "No Posiitons"}
+          </p>
         </div>
         <div className="flex justify-center mt-18">
           <button
