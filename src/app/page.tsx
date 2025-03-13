@@ -1,38 +1,11 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { LockScreen, Section1 } from "../components"
+import { useState } from "react"
+import { LockScreen, Main } from "../components"
 import { AnimatePresence, motion } from "framer-motion"
 
 export default function Home() {
   const [isUnlocked, setIsUnlocked] = useState(false)
-  const [audio, setAudio] = useState<HTMLAudioElement | null>(null)
-  const [isPlaying, setIsPlaying] = useState(false)
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setAudio(new Audio("/assets/backsound-ramadhan.mp3"))
-    }
-  }, [])
-
-  useEffect(() => {
-    if (isUnlocked && audio) {
-      audio.play()
-      audio.loop = true
-      setIsPlaying(true)
-    }
-  }, [isUnlocked, audio])
-
-  const togglePlayPause = () => {
-    if (audio) {
-      if (isPlaying) {
-        audio.pause()
-      } else {
-        audio.play()
-      }
-      setIsPlaying(!isPlaying)
-    }
-  }
 
   return (
     <AnimatePresence mode="wait">
@@ -44,12 +17,7 @@ export default function Home() {
           exit={{ y: "-100%", opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
-          <Section1 />
-          <div className="fixed flex items-center gap-2 px-5 py-3 transform rounded-full bottom-5 right-3 bg-white/20 backdrop-blur-md">
-            <button onClick={togglePlayPause} className="text-lg text-white">
-              {isPlaying ? "⏸" : "▶"}
-            </button>
-          </div>
+          <Main isUnlocked={isUnlocked} />
         </motion.div>
       ) : (
         <motion.div

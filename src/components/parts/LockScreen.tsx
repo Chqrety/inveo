@@ -33,7 +33,7 @@ export default function LockScreen({ onUnlock }: { onUnlock: () => void }) {
       <div className="flex flex-col gap-8 ">
         <div className="flex justify-center">
           <div
-            className={`${berkshire.className} flex flex-col text-center gap-1`}
+            className={`${berkshire.className} flex flex-col text-center gap-1 text-[#FFE5AA]`}
           >
             <div className="text-5xl md:text-3xl lg:text-5xl xl:text-7xl drop-shadow-[0_0_10px_rgba(255,229,170,0.8)]">
               <p>Nuzulul</p>
