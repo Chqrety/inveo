@@ -82,7 +82,7 @@ export default function Page() {
       </div>
 
       <div className="flex justify-center mb-10">
-        <div className="text-xs md:text-base flex flex-col gap-3 w-[80%] md:w-fit px-5 py-2 border border-gray-300 rounded-2xl min-w-4xl">
+        <div className="text-xs md:text-base flex flex-col gap-3 w-[80%] md:w-fit px-5 py-2 border border-gray-300 rounded-2xl xl:min-w-4xl">
           <p>Silahkan Masukkan Nama Tamu</p>
           <p>
             * Gunakan baris baru (↵) untuk memisahkan nama yang akan Anda
@@ -112,7 +112,7 @@ export default function Page() {
       </div>
 
       <div className="flex justify-center mb-10">
-        <div className="text-xs md:text-base flex flex-col gap-2 w-[80%] md:w-fit min-w-4xl px-5 py-7 border border-gray-300 rounded-2xl">
+        <div className="text-xs md:text-base flex flex-col gap-2 w-[80%] md:w-fit xl:min-w-4xl px-5 py-7 border border-gray-300 rounded-2xl">
           <p className="font-bold">Daftar Nama Undangan</p>
           <div className="flex justify-end">
             <button
