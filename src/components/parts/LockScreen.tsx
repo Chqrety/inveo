@@ -18,8 +18,6 @@ export default function LockScreen({
 }: LockScreenProps) {
   return (
     <div className="relative pt-24 xl:pt-64 h-dvh">
-      {/* <div className="absolute w-10 h-10 bg-black sm:bg-red-500 top-1/2 left-32 md:bg-orange-500 lg:bg-amber-500 xl:bg-lime-500" /> */}
-      {/* <p>hello wasdorld</p> */}
       <div className="absolute top-0 flex">
         <Image
           src="/assets/lantern.png"
@@ -79,7 +77,7 @@ export default function LockScreen({
         <div className="absolute z-10 flex justify-center -translate-x-1/2 bottom-52 left-1/2">
           <Image src="/assets/quran.png" width={200} height={200} alt="quran" />
         </div>
-        <div className="absolute bottom-32 left-1/2 text-center -translate-x-1/2 z-20 text-[#06205B]">
+        <div className="absolute bottom-32 left-1/2 text-center -translate-x-1/2 z-20 text-[#06205B] lg:text-[#efe9d5]">
           <p className="text-xs font-semibold">Kepada Yth:</p>
           {loading ? (
             <span className="loading loading-dots loading-sm"></span>

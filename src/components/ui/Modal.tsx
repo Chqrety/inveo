@@ -83,6 +83,20 @@ export default function Modal() {
               <p className="hidden lg:block">Delete</p>
             </button>
             <p className="col-span-5">: Gunakan untuk menghapus data</p>
+
+            <button className="btn btn-sm col-span-1 bg-green-100 text-white rounded-4xl lg:rounded-[5px]">
+              <p className="text-black">nama</p>
+            </button>
+            <p className="col-span-5">
+              Baris data berwarna hijau menunjukkan bahwa tamu bisa hadir
+            </p>
+
+            <button className="btn btn-sm col-span-1 bg-red-100 text-white rounded-4xl lg:rounded-[5px]">
+              <p className="text-black">nama</p>
+            </button>
+            <p className="col-span-5">
+              Baris data berwarna merah menunjukkan bahwa tamu tidak bisa hadir
+            </p>
           </div>
         </div>
         <form method="dialog" className="modal-backdrop">
