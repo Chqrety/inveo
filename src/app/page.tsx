@@ -19,7 +19,7 @@ export default function Home() {
             exit={{ y: "-100%", opacity: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <LockScreen onUnlock={() => setIsUnlocked(true)} />
+            <LockScreen loading={false} onUnlock={() => setIsUnlocked(true)} />
           </motion.div>
         )}
       </AnimatePresence>

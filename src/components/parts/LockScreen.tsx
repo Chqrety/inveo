@@ -7,12 +7,14 @@ interface LockScreenProps {
   onUnlock: () => void
   visitorName?: string
   visitorPosition?: string
+  loading: boolean
 }
 
 export default function LockScreen({
   onUnlock,
   visitorName,
   visitorPosition,
+  loading,
 }: LockScreenProps) {
   return (
     <div className="relative pt-24 xl:pt-64 h-dvh">
@@ -79,15 +81,21 @@ export default function LockScreen({
         </div>
         <div className="absolute bottom-32 left-1/2 text-center -translate-x-1/2 z-20 text-[#06205B]">
           <p className="text-xs font-semibold">Kepada Yth:</p>
-          <p className="font-bold text">{visitorName || "Guest"}</p>
-          <p className="text-sm italic font-bold">
-            {visitorPosition || "No Posiitons"}
-          </p>
+          {loading ? (
+            <span className="loading loading-dots loading-sm"></span>
+          ) : (
+            <>
+              <p className="font-bold text">{visitorName || "Guest"}</p>
+              <p className="text-sm italic font-bold">
+                {visitorPosition || "No Posiitons"}
+              </p>
+            </>
+          )}
         </div>
         <div className="flex justify-center mt-18">
           <button
             onClick={onUnlock}
-            className="z-20 bg-[#06205B] px-5 py-2 flex gap-2 rounded-3xl absolute bottom-16 hover:cursor-pointer"
+            className="z-20 bg-[#06205B] lg:bg-teal-800 px-5 py-2 flex gap-2 rounded-3xl absolute bottom-16 hover:cursor-pointer"
           >
             <Image src="/assets/mail.svg" width={20} height={20} alt="mail" />
             BUKA UNDANGAN

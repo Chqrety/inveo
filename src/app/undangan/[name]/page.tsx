@@ -34,7 +34,7 @@ const Page = () => {
 
       const { data, error } = await supabase
         .from("visitors")
-        .select("name, position, presence")
+        .select("id, name, position, presence")
         .eq("name", formattedName)
         .maybeSingle()
 
@@ -45,9 +45,6 @@ const Page = () => {
 
     fetchVisitor()
   }, [params.name, setVisitor])
-
-  // if (loading) return <p>Loading...</p>
-  // if (!visitor) return <p>Visitor not found.</p>
 
   return (
     <AnimatePresence mode="wait">
@@ -68,6 +65,7 @@ const Page = () => {
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
           <LockScreen
+            loading={loading}
             onUnlock={() => setIsUnlocked(true)}
             visitorName={visitor?.name}
             visitorPosition={visitor?.position}

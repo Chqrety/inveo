@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import "./globals.css"
 import { poppins } from "./fonts"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>{children}</body>
+      <body className={`${poppins.className} antialiased`}>
+        <ToastContainer position="top-right" autoClose={3000} />
+        {children}
+      </body>
     </html>
   )
 }

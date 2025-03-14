@@ -10,7 +10,7 @@ export default function Section2() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="absolute top-0 left-0"
+        className="absolute top-0 left-0 lg:hidden"
       >
         <Image
           src="/assets/top-section-2.svg"
@@ -67,6 +67,7 @@ export default function Section2() {
         viewport={{ once: true }}
       >
         <Image
+          className="block lg:hidden"
           src="/assets/bottom-section-2.svg"
           width={500}
           height={500}

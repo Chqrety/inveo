@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 
 interface Visitor {
+  id: number
   name: string
   position: string
   presence: string

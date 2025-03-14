@@ -2,6 +2,7 @@ import { useVisitorStore } from "@/store/useVisitorStore"
 import { useEffect, useState } from "react"
 import { supabase } from "@/lib/supabase"
 import { motion } from "framer-motion"
+import { toast } from "react-toastify"
 
 export default function Section4() {
   const visitor = useVisitorStore((state) => state.visitor)
@@ -18,11 +19,9 @@ export default function Section4() {
       .eq("name", visitor.name)
 
     if (error) {
-      console.error("Gagal update data:", error.message)
-      console.log("Gagal update data!")
+      toast.error("Gagal update data")
     } else {
-      // alert("Data berhasil dikirim!")
-      console.log("Data berhasil dikirim!")
+      toast.success("Data berhasil dikirim!")
     }
   }
 

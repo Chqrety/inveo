@@ -5,7 +5,7 @@ export default function Section1() {
   return (
     <div className="relative pt-48 min-h-dvh">
       <Image
-        className="absolute top-0 left-0"
+        className="absolute lg:hidden top-0 left-0"
         src="/assets/top-section-1.png"
         width={500}
         height={500}
@@ -40,7 +40,13 @@ export default function Section1() {
           <p>yang insyaAllah akan diselenggarakan</p>
         </div>
       </div>
-      <Image src="/assets/masjid.png" width={500} height={500} alt="masjid" />
+      <Image
+        className="block lg:hidden"
+        src="/assets/masjid.png"
+        width={500}
+        height={500}
+        alt="masjid"
+      />
     </div>
   )
 }
