@@ -43,6 +43,10 @@ export default function Page() {
   const [currentPage, setCurrentPage] = useState(1)
 
   const handleSubmit = async () => {
+    if (!input.trim()) {
+      toast.warning("Nama tamu tidak boleh kosong!")
+      return
+    }
     const rows = input.split("\n").map((line) => {
       const [name, position] = line.split("-").map((s) => s.trim())
       return { name, position }
@@ -50,8 +54,11 @@ export default function Page() {
 
     const { error } = await supabase.from("visitors").insert(rows)
     if (error) toast.error("Gagal menyimpan")
-    else toast.success("Berhasil disimpan!")
-    fetchVisitors()
+    else {
+      toast.success("Berhasil disimpan!")
+      setInput("")
+      fetchVisitors()
+    }
   }
 
   const fetchVisitors = async () => {
@@ -200,6 +207,7 @@ export default function Page() {
             </div>
           </div>
           <textarea
+            required
             rows={5}
             className="textarea"
             placeholder="Nama-Jabatan"

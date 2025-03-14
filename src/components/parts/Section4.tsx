@@ -9,7 +9,8 @@ export default function Section4() {
   const [presence, setPresence] = useState("")
 
   const handleSubmit = async () => {
-    if (!visitor?.name || !presence) return alert("Harap lengkapi form!")
+    if (!visitor?.name || !presence)
+      return toast.warning("Harap lengkapi form!")
 
     const { error } = await supabase
       .from("visitors")
