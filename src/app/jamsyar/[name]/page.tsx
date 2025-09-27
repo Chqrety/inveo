@@ -34,7 +34,7 @@ const Page = () => {
 
       const { data, error } = await supabase
         .from("visitors")
-        .select("id, name, position, presence")
+        .select("id, name, position, presence, short_uuid")
         .eq("name", formattedName)
         .maybeSingle()
 

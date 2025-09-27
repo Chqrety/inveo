@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { LockScreenMakrab, MainMakrab } from "../components"
+import { LockScreenMakrab, MainMakrab } from "../../components"
 import { AnimatePresence, motion } from "framer-motion"
 
 export default function Home() {

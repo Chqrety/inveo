@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { LockScreenMakrab, MainMakrab } from "../components"
+import { LockScreen, Main } from "../../components"
 import { AnimatePresence, motion } from "framer-motion"
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
           exit={{ y: "-100%", opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
-          <MainMakrab isUnlocked={isUnlocked} />
+          <Main isUnlocked={isUnlocked} />
         </motion.div>
       ) : (
         <motion.div
@@ -25,10 +25,7 @@ export default function Home() {
           exit={{ y: "-100%", opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
-          <LockScreenMakrab
-            loading={false}
-            onUnlock={() => setIsUnlocked(true)}
-          />
+          <LockScreen loading={false} onUnlock={() => setIsUnlocked(true)} />
         </motion.div>
       )}
     </AnimatePresence>

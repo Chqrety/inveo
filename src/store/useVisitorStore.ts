@@ -5,6 +5,7 @@ interface Visitor {
   name: string
   position: string
   presence: string
+  short_uuid: string
 }
 
 interface VisitorStore {

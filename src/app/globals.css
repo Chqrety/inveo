@@ -5,12 +5,12 @@
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  --color-primary: #06205b;
+  --color-primary: #018bd2;
   --color-secondary: #497d74;
 }
 
 :root {
-  --background: #06205b;
+  --background: #018bd2;
   --foreground: #efe9d5;
 }
 
