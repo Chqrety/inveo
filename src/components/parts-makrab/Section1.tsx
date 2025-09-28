@@ -133,13 +133,13 @@ export default function Section1() {
               see you there!
             </p>
           </div>
-        </div>
-
-        <div className="absolute bottom-40 xl:bottom-1/3 xl:-translate-y-1/2 text-[10px] text-white text-center w-full px-5">
-          <p className="text-base">
-            <span className="font-bold">CONTACT PERSON :</span> <br />
-            0857-1208-4018 (RAFI)
-          </p>
+          {/* <div className="absolute bottom-40 lg:bottom-1/2 xl:bottom-1/3 xl:-translate-y-1/2 text-[10px] text-white text-center w-full px-5"> */}
+          <div className="absolute bottom-40 lg:bottom-1/5 lg:translate-y-1/2 text-[10px] text-white text-center w-full px-5">
+            <p className="text-base">
+              <span className="font-bold">CONTACT PERSON :</span> <br />
+              0857-1208-4018 (RAFI)
+            </p>
+          </div>
         </div>
       </div>
     </div>
