@@ -3,41 +3,56 @@ import Section1 from "./Section1"
 import Section2 from "./Section2"
 import Section3 from "./Section3"
 import Section4 from "./Section4"
+import Image from "next/image"
 
 export default function Main({ isUnlocked }: { isUnlocked: boolean }) {
-  // const [audio, setAudio] = useState<HTMLAudioElement | null>(null)
-  // const [isPlaying, setIsPlaying] = useState(false)
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
 
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     setAudio(new Audio("/assets/backsound-ramadhan.mp3"))
-  //   }
-  // }, [])
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setAudio(new Audio("/assets/makrab/Hindia-Kita-ke-Sana.mp3"))
+    }
+  }, [])
 
-  // useEffect(() => {
-  //   if (isUnlocked && audio) {
-  //     audio.play()
-  //     audio.loop = true
-  //     setIsPlaying(true)
-  //   }
-  // }, [isUnlocked, audio])
+  useEffect(() => {
+    if (isUnlocked && audio) {
+      audio.play()
+      audio.loop = true
+      setIsPlaying(true)
+    }
+  }, [isUnlocked, audio])
 
-  // const togglePlayPause = () => {
-  //   if (audio) {
-  //     if (isPlaying) {
-  //       audio.pause()
-  //     } else {
-  //       audio.play()
-  //     }
-  //     setIsPlaying(!isPlaying)
-  //   }
-  // }
+  const togglePlayPause = () => {
+    if (audio) {
+      if (isPlaying) {
+        audio.pause()
+      } else {
+        audio.play()
+      }
+      setIsPlaying(!isPlaying)
+    }
+  }
   return (
     <>
       <div className="fixed z-20 flex items-center gap-2 px-5 py-3 transform rounded-full bottom-5 right-3 bg-white/20 backdrop-blur-md">
-        {/* <button onClick={togglePlayPause} className="text-lg text-white">
-          {isPlaying ? "⏸" : "▶"}
-        </button> */}
+        <button onClick={togglePlayPause} className="text-lg text-white">
+          {isPlaying ? (
+            <Image
+              src="/assets/makrab/pause.svg"
+              width={16}
+              height={16}
+              alt="pause"
+            />
+          ) : (
+            <Image
+              src="/assets/makrab/play.svg"
+              width={16}
+              height={16}
+              alt="play"
+            />
+          )}
+        </button>
       </div>
       <div className="bg-[#018bd2]">
         <Section1 />

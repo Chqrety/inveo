@@ -5,8 +5,8 @@ import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 export const metadata: Metadata = {
-  title: "Jamsyar Invitation",
-  description: "Undangan Digital Acara Nuzulul Qur'an dan Buka Bersama Jamsyar",
+  title: "Inveo",
+  description: "Undangan Digital by Chqrety",
   icons: "./favicon.ico",
 }
 
