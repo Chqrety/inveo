@@ -61,7 +61,7 @@ export default function Section1() {
 
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-3">
             <p className="text-center w-full text-white [text-shadow:0_1.655px_1.655px_rgba(0,0,0,0.25)] text-[9px]">
-              18th October - 19th October 2025 <br /> 00.00 - Selesai (WIB){" "}
+              18th October - 19th October 2025 <br /> 19.00 - Selesai (WIB)
               <br /> Villa Aldino
             </p>
           </div>
@@ -113,7 +113,7 @@ export default function Section1() {
                 alt="clock icon"
               />
               <div className="text-[10px] border rounded-xl py-1 px-2 border-[#0050FD] w-full">
-                <p>00.00 - Selesai (WIB)</p>
+                <p>19.00 - Selesai (WIB)</p>
               </div>
             </div>
             <div className="flex items-center gap-2">

@@ -1,7 +1,6 @@
 import { useVisitorStore } from "@/store/useVisitorStore"
 import { useEffect, useState } from "react"
 import { supabase } from "@/lib/supabase"
-import { motion } from "framer-motion"
 import { toast } from "react-toastify"
 import Image from "next/image"
 
@@ -199,16 +198,18 @@ export default function Section4() {
             </div>
           </div>
 
-          <div className="h-fit hidden md:flex">
-            <Image
-              src={"/assets/makrab/phone.svg"}
-              width={30}
-              height={30}
-              alt="phone"
-            />
+          <div className="h-fit hidden md:flex gap-3 items-center">
+            <div className="tooltip tooltip-bottom" data-tip="phone">
+              <Image
+                src={"/assets/makrab/phone.svg"}
+                width={30}
+                height={30}
+                alt="phone"
+              />
+            </div>
             <div className="flex flex-col">
               <p className="font-bold">Contact Person:</p>
-              <p>+62 000-0000-0000</p>
+              <p>0857-1208-4018 (RAFI)</p>
             </div>
           </div>
           <div className="flex flex-col">

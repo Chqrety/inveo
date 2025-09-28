@@ -114,9 +114,8 @@ export default function LockScreen({
           ) : (
             <>
               <p className="text-lg font-bold">
-                {visitorName || "Nama Alumni"}
+                {visitorName || "Sepuh Doscom"}
               </p>
-              <p className="font-semibold">{visitorPosition || "Sekum"}</p>
             </>
           )}
         </div>
