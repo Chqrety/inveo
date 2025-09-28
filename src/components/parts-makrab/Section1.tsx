@@ -62,7 +62,7 @@ export default function Section1() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-3">
             <p className="text-center w-full text-white [text-shadow:0_1.655px_1.655px_rgba(0,0,0,0.25)] text-[9px]">
               18th October - 19th October 2025 <br /> 19.00 - Selesai (WIB)
-              <br /> Villa Aldino
+              <br /> Villa Aldino, Bandungan
             </p>
           </div>
         </div>
@@ -80,61 +80,62 @@ export default function Section1() {
 
       {/* dekstop */}
       <div className="hidden md:flex justify-center">
-        <Image
-          className="relative"
-          src="/assets/makrab/opened-envelope.svg"
-          width={700}
-          height={700}
-          alt="opened envelope"
-        />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-3">
-          <p className="text-center w-full text-[10px] text-[#0050FD] [text-shadow:0_1.655px_1.655px_rgba(0,0,0,0.25)]">
-            We're inviting you to our Gathering Night to get to know each other
-            better, <br />
-            share laughter, and build stronger friendships! Save the date!
-          </p>
-          <div className="flex flex-col w-fit text-[#0050FD] gap-2 text-center">
-            <div className="flex items-center gap-2">
-              <Image
-                src="/assets/makrab/calendar.svg"
-                width={24}
-                height={24}
-                alt="calendar icon"
-              />
-              <div className="text-[10px] border rounded-xl py-1 px-2 border-[#0050FD]">
-                <p>18th October - 19th October 2025</p>
+        <div className="relative">
+          <Image
+            src="/assets/makrab/opened-envelope.svg"
+            width={700}
+            height={700}
+            alt="opened envelope"
+          />
+          <div className="absolute top-1/2 xl:top-[23%] left-1/2 -translate-x-1/2 -translate-y-1/2 xl:translate-y-1/2 flex flex-col items-center gap-3">
+            <p className="text-center w-full text-[10px] text-[#0050FD] [text-shadow:0_1.655px_1.655px_rgba(0,0,0,0.25)]">
+              We're inviting you to our Gathering Night to get to know each
+              other better, <br />
+              share laughter, and build stronger friendships! Save the date!
+            </p>
+            <div className="flex flex-col w-fit text-[#0050FD] gap-2 text-center">
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/assets/makrab/calendar.svg"
+                  width={24}
+                  height={24}
+                  alt="calendar icon"
+                />
+                <div className="text-[10px] border rounded-xl py-1 px-2 border-[#0050FD]">
+                  <p>18th October - 19th October 2025</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/assets/makrab/clock.svg"
+                  width={24}
+                  height={24}
+                  alt="clock icon"
+                />
+                <div className="text-[10px] border rounded-xl py-1 px-2 border-[#0050FD] w-full">
+                  <p>19.00 - Selesai (WIB)</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/assets/makrab/maps.svg"
+                  width={24}
+                  height={24}
+                  alt="maps icon"
+                />
+                <div className="text-[10px] border rounded-xl py-1 px-2 border-[#0050FD] w-full">
+                  <p>Villa Aldino, Bandungan</p>
+                </div>
               </div>
             </div>
-            <div className="flex items-center gap-2">
-              <Image
-                src="/assets/makrab/clock.svg"
-                width={24}
-                height={24}
-                alt="clock icon"
-              />
-              <div className="text-[10px] border rounded-xl py-1 px-2 border-[#0050FD] w-full">
-                <p>19.00 - Selesai (WIB)</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <Image
-                src="/assets/makrab/maps.svg"
-                width={24}
-                height={24}
-                alt="maps icon"
-              />
-              <div className="text-[10px] border rounded-xl py-1 px-2 border-[#0050FD] w-full">
-                <p>Villa Aldino</p>
-              </div>
-            </div>
+            <p className="text-center w-full text-[10px] text-[#0050FD] [text-shadow:0_1.655px_1.655px_rgba(0,0,0,0.25)]">
+              Don't miss the fun, games, and great <br /> moments. We hope to
+              see you there!
+            </p>
           </div>
-          <p className="text-center w-full text-[10px] text-[#0050FD] [text-shadow:0_1.655px_1.655px_rgba(0,0,0,0.25)]">
-            Don't miss the fun, games, and great <br /> moments. We hope to see
-            you there!
-          </p>
         </div>
 
-        <div className="absolute bottom-40 text-[10px] text-white text-center w-full px-5">
+        <div className="absolute bottom-40 xl:bottom-1/3 xl:-translate-y-1/2 text-[10px] text-white text-center w-full px-5">
           <p className="text-base">
             <span className="font-bold">CONTACT PERSON :</span> <br />
             0857-1208-4018 (RAFI)

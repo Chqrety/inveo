@@ -89,11 +89,10 @@ export default function LockScreen({
           <div
             className={`${league_gothic.className} relative flex flex-col text-center text-[#FFFFFF]`}
           >
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#018BD2] rounded-full px-3 py-3.5 drop-shadow-[0_5.411px_5.411px_rgba(0,0,0,0.5)]">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  bg-[#018BD2] rounded-full px-3 py-3.5 drop-shadow-[0_5.411px_5.411px_rgba(0,0,0,0.5)]">
               <p className="text-3xl">2025</p>
             </div>
             <div className="absolute w-16 lg:w-fit -right-1/6 top-1/2 -translate-x-1/2 -translate-y-1/3 lg:-right-1/4">
-              {/* <div className="absolute -right-1/4 top-1/2 -translate-x-1/2 -translate-y-1/4 w-16"> */}
               <Image
                 src="/assets/makrab/closed-envelope.svg"
                 width={170}

@@ -14,7 +14,7 @@ export default function Section2() {
           width={1920}
           height={1080}
           alt="makrab"
-          className="w-full h-auto object-cover"
+          className="w-full object-cover z-0"
         />
       </div>
 
