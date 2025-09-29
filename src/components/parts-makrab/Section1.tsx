@@ -87,11 +87,11 @@ export default function Section1() {
             height={700}
             alt="opened envelope"
           />
-          <div className="absolute top-1/2 xl:top-[23%] left-1/2 -translate-x-1/2 -translate-y-1/2 xl:translate-y-1/2 flex flex-col items-center gap-3">
+          <div className="absolute top-1/2 xl:top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2 xl:translate-y-1/2 flex flex-col items-center gap-3">
             <p className="text-center w-full text-[10px] text-[#0050FD] [text-shadow:0_1.655px_1.655px_rgba(0,0,0,0.25)]">
               We're inviting you to our Gathering Night to get to know each
-              other better, <br />
-              share laughter, and build stronger friendships! Save the date!
+              other better, share laughter, and build stronger friendships! Save
+              the date!
             </p>
             <div className="flex flex-col w-fit text-[#0050FD] gap-2 text-center">
               <div className="flex items-center gap-2">

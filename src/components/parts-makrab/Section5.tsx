@@ -67,16 +67,14 @@ export default function Section5() {
                   Jumlah Peserta <span className="text-red-500">*</span>
                 </p>
                 <p className="text-[9px]">
-                  (Jika membawa keluarga bisa diinputkan jumlahnya)
+                  (Jika sendiri, isi 1. Jika bersama keluarga, tuliskan jumlah
+                  totalnya)
                 </p>
               </div>
-              {/* <p className="text-sm">
-                Jumlah Keluarga yang Ikut Hadir
-                <span className="text-red-500">*</span>
-              </p> */}
               <input
                 type="number"
-                placeholder="0 Orang"
+                min={1}
+                placeholder="1 Orang"
                 value={amount}
                 onChange={e => setAmount(e.target.value)}
                 className="input bg-[#018bd2]/10 w-full text-sm text-black p-3 rounded-[2px]"
