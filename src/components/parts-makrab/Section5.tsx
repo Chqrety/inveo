@@ -62,12 +62,21 @@ export default function Section5() {
               />
             </div>
             <div className="flex flex-col items-start max-w-xs w-full text-black gap-1">
-              <p className="text-sm">
-                Jumlah Peserta <span className="text-red-500">*</span>
-              </p>
+              <div className="flex flex-col text-start">
+                <p className="text-sm">
+                  Jumlah Peserta <span className="text-red-500">*</span>
+                </p>
+                <p className="text-[9px]">
+                  (Jika membawa keluarga bisa diinputkan jumlahnya)
+                </p>
+              </div>
+              {/* <p className="text-sm">
+                Jumlah Keluarga yang Ikut Hadir
+                <span className="text-red-500">*</span>
+              </p> */}
               <input
                 type="number"
-                placeholder="Peserta yang akan datang"
+                placeholder="0 Orang"
                 value={amount}
                 onChange={e => setAmount(e.target.value)}
                 className="input bg-[#018bd2]/10 w-full text-sm text-black p-3 rounded-[2px]"
